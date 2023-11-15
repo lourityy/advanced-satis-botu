@@ -76,11 +76,11 @@ module.exports = {
                 price: productPrice,
             })
             interaction.reply({ embeds: [productAdded] });
-        } catch {
+        } catch (e){
             const error = new EmbedBuilder()
                 .setColor("Red")
                 .setDescription("Bir hata oluştu, lütfen tekrar deneyin.")
-
+            console.log(e)
             return interaction.reply({ embeds: [error], ephemeral: true })
         }
     }
